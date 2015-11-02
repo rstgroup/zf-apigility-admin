@@ -7,6 +7,7 @@
 return array(
     'service_manager' => array(
         'invokables' => array(
+            'ZF\Apigility\Admin\Diagnostic\ConfigFileWritable' => 'ZF\Apigility\Admin\Diagnostic\ConfigFileWritableFactory',
             'ZF\Apigility\Admin\Listener\CryptFilterListener' => 'ZF\Apigility\Admin\Listener\CryptFilterListener',
         ),
         'factories' => array(
@@ -1342,6 +1343,11 @@ return array(
         'ZF\Apigility\Admin\Controller\Authorization' => array(
             'input_filter' => 'ZF\Apigility\Admin\InputFilter\Authorization',
         ),
-
+    ),
+    'zf-apigility-admin' => array(
+        'config-path' => 'config/autoload/development.php',
+    ),
+    'diagnostics' => array(
+        'ZF\Apigility\Admin\Diagnostic\ConfigFileWritable',
     ),
 );

@@ -78,21 +78,6 @@ class Module
         );
     }
 
-    public function getDiagnostics()
-    {
-        return array(
-            'Config File Writable' => function () {
-                if (!defined('APPLICATION_PATH')) {
-                    return false;
-                }
-                if (!is_writable(APPLICATION_PATH . '/config/autoload/development.php')) {
-                    return false;
-                }
-                return true;
-            },
-        );
-    }
-
     public function getConfig()
     {
         return include __DIR__ . '/config/module.config.php';
